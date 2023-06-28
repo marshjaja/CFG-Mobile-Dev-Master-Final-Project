@@ -4,10 +4,11 @@ import { Text, View } from "react-native";
 
 export default function ChatScreen({ navigation }) {
   return (
-    <View style={styles.card}>
-      <Text style={styles.cardHeader}>Code4Girls</Text>
-      <Text style={styles.cardBody}>Chat</Text>
-      <View style={styles.input} />
-    </View>
+    <Text>chat screen</Text>
+    // <View style={styles.card}>
+    //   <Text style={styles.cardHeader}>Code4Girls</Text>
+    //   <Text style={styles.cardBody}>Chat</Text>
+    //   <View style={styles.input} />
+    // </View>
   );
 }
