@@ -4,6 +4,7 @@ import { Formik } from "formik";
 import { useState } from "react";
 import styles from "../styles/AppStyles.js";
 import { Keyboard } from "react-native";
+import LoginButton from "../components/LoginButton";
 
 export default function Form() {
   const [finalGrade, setFinalGrade] = useState("");
@@ -11,6 +12,7 @@ export default function Form() {
 
   return (
     <View>
+      <LoginButton />
       <Formik
         initialValues={{
           value1: " ",
