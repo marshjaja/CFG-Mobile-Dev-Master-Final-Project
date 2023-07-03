@@ -38,11 +38,31 @@ const TabNavigator = () => {
         tabBarInactiveTintColor: "black",
       })}
     >
-      <Tab.Screen name="Announcements" component={Announcements} />
-      <Tab.Screen name="Calendar" component={CalendarScreen} />
-      <Tab.Screen name="Chat" component={ChatScreen} />
-      <Tab.Screen name="Curriculum" component={Curriculum} />
-      <Tab.Screen name="Results" component={ResultsScreen} />
+      <Tab.Screen
+        name="Announcements"
+        component={Announcements}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="Calendar"
+        component={CalendarScreen}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="Chat"
+        component={ChatScreen}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="Curriculum"
+        component={Curriculum}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name="Results"
+        component={ResultsScreen}
+        options={{ headerShown: false }}
+      />
     </Tab.Navigator>
   );
 };
@@ -51,8 +71,16 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="CFG" component={TabNavigator} />
-        <Stack.Screen name="LoginScreen" component={LoginScreen} />
+        <Stack.Screen
+          name="CFG"
+          component={TabNavigator}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="LoginScreen"
+          component={LoginScreen}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
