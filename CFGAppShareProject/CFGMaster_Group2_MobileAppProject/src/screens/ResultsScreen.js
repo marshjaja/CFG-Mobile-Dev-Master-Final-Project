@@ -1,17 +1,17 @@
 import React from "react";
-import { Button, TextInput, View, Text } from "react-native";
+import { StyleSheet, Image, Button, TextInput, View, Text } from "react-native";
 import { Formik } from "formik";
 import { useState } from "react";
-import styles from "../styles/AppStyles.js";
 import { Keyboard } from "react-native";
 import LoginButton from "../components/LoginButton";
+import { TouchableOpacity } from "react-native";
 
 export default function Form({ navigation }) {
   const [finalGrade, setFinalGrade] = useState("");
   const [gradeBand, setGradeBand] = useState("");
 
   return (
-    <View>
+    <View style={styles.container}>
       <LoginButton navigation={navigation} />
       <Formik
         initialValues={{
@@ -47,10 +47,16 @@ export default function Form({ navigation }) {
         }}
       >
         {(props) => (
-          <View style={styles.card}>
-            <Text style={styles.cardHeader}>Code First Girls</Text>
-            <Text style={styles.cardBody}>Grade calculator</Text>
-            <Text style={styles.cardBody}>First assessment grade (10%):</Text>
+          <View>
+            <View style={styles.image}>
+              <Image
+                source={require("../../assets/code4cropped.png")}
+                style={{ width: 200, height: 200, top: 10 }}
+                resizeMode="contain"
+              />
+            </View>
+            <Text>Grade calculator</Text>
+            <Text>First assessment grade (10%):</Text>
             <TextInput
               style={styles.input}
               placeholder="value1"
@@ -58,7 +64,7 @@ export default function Form({ navigation }) {
               value={props.values.value1}
               keyboardType="numeric"
             />
-            <Text style={styles.cardBody}>Second assessment grade (25%):</Text>
+            <Text>Second assessment grade (25%):</Text>
             <TextInput
               style={styles.input}
               placeholder="value2"
@@ -66,7 +72,7 @@ export default function Form({ navigation }) {
               value={props.values.value2}
               keyboardType="numeric"
             />
-            <Text style={styles.cardBody}>Homework average (15%):</Text>
+            <Text>Homework average (15%):</Text>
             <TextInput
               style={styles.input}
               placeholder="value3"
@@ -74,7 +80,7 @@ export default function Form({ navigation }) {
               value={props.values.value3}
               keyboardType="numeric"
             />
-            <Text style={styles.cardBody}>Group project result (25%):</Text>
+            <Text>Group project result (25%):</Text>
             <TextInput
               style={styles.input}
               placeholder="value4"
@@ -82,9 +88,7 @@ export default function Form({ navigation }) {
               value={props.values.value4}
               keyboardType="numeric"
             />
-            <Text style={styles.cardBody}>
-              Specialisation exam result (25%):
-            </Text>
+            <Text>Specialisation exam result (25%):</Text>
             <TextInput
               style={styles.input}
               placeholder="value5"
@@ -92,16 +96,52 @@ export default function Form({ navigation }) {
               value={props.values.value5}
               keyboardType="numeric"
             />
-            <Button
+            <TouchableOpacity
               style={styles.button}
-              title="calculate final grade"
               onPress={props.handleSubmit}
-            ></Button>
-            <Text style={styles.cardBody}>Final Grade: {finalGrade}%</Text>
-            <Text style={styles.cardBody}>{gradeBand}</Text>
+            >
+              <Text style={styles.buttonText}>Calculate Final Grade</Text>
+            </TouchableOpacity>
+            <Text>Final Grade: {finalGrade}%</Text>
+            <Text>{gradeBand}</Text>
           </View>
         )}
       </Formik>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    marginHorizontal: 20,
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  input: {
+    marginVertical: 4,
+    height: 50,
+    borderWidth: 1,
+    borderRadius: 6,
+    borderColor: "#9336B4",
+    padding: 10,
+    backgroundColor: "#fff",
+  },
+  button: {
+    backgroundColor: "#9336B4",
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    borderRadius: 6,
+    marginVertical: 8,
+  },
+  buttonText: {
+    color: "#FFF",
+    fontSize: 16,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+  image: {
+    // top: 60,
+    right: -8,
+  },
+});
