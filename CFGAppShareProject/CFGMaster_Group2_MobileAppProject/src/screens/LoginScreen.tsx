@@ -44,7 +44,7 @@ export default function LoginScreen({ navigation }) {
         password
       );
       console.log(response);
-      alert("Check your emails!");
+      alert("Account registered");
     } catch (error: any) {
       console.log(error);
       alert("Sign in failed: " + error.message);
