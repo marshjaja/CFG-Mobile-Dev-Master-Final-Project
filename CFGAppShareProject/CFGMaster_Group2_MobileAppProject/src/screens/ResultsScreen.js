@@ -6,13 +6,13 @@ import styles from "../styles/AppStyles.js";
 import { Keyboard } from "react-native";
 import LoginButton from "../components/LoginButton";
 
-export default function Form() {
+export default function Form({ navigation }) {
   const [finalGrade, setFinalGrade] = useState("");
   const [gradeBand, setGradeBand] = useState("");
 
   return (
     <View>
-      <LoginButton />
+      <LoginButton navigation={navigation} />
       <Formik
         initialValues={{
           value1: " ",
