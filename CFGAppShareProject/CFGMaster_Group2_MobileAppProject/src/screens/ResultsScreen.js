@@ -10,8 +10,8 @@ import {
 } from "react-native";
 import { Formik } from "formik";
 import { useState } from "react";
-import LoginButton from "../components/LoginButton";
 import { TouchableOpacity } from "react-native";
+import GlobalHeader from "../components/GlobalHeader";
 
 export default function Form({ navigation }) {
   const [finalGrade, setFinalGrade] = useState("");
@@ -24,7 +24,7 @@ export default function Form({ navigation }) {
   return (
     <TouchableWithoutFeedback onPress={dismissKeyboard}>
       <View style={styles.container}>
-        <LoginButton navigation={navigation} />
+        <GlobalHeader />
         <Formik
           initialValues={{
             value1: " ",
