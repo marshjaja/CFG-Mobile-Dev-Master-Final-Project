@@ -9,6 +9,8 @@ import Curriculum from "./src/screens/Curriculum.js";
 import LoginScreen from "./src/screens/LoginScreen.tsx";
 import ResultsScreen from "./src/screens/ResultsScreen.js";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import SplashScreen from "react-native-splash-screen";
+import { useEffect } from "react";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -68,6 +70,15 @@ const TabNavigator = () => {
 };
 
 export default function App() {
+  useEffect(() => {
+    const hideSplashScreen = async () => {
+      await SplashScreen.hide();
+    };
+    const delay = 3000;
+    const timeoutId = setTimeout(hideSplashScreen, delay);
+    return () => clearTimeout(timeoutId);
+  }, []);
+  
   return (
     <NavigationContainer>
       <Stack.Navigator>
