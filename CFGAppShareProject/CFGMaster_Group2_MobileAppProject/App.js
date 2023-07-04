@@ -72,13 +72,18 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="CFG"
-          component={TabNavigator}
+          name="LoginScreen"
+          component={LoginScreen}
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="LoginScreen"
-          component={LoginScreen}
+          name="Announcements"
+          component={Announcements}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="CFG"
+          component={TabNavigator}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

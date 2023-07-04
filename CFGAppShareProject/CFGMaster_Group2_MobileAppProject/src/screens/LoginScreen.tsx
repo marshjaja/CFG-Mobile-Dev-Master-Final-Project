@@ -27,6 +27,7 @@ export default function LoginScreen({ navigation }) {
     try {
       const response = await signInWithEmailAndPassword(auth, email, password);
       console.log(response);
+      navigation.navigate("CFG");
     } catch (error: any) {
       console.log(error);
       alert("Sign in failed: " + error.message);

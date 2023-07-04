@@ -11,11 +11,12 @@ import {
 import { Formik } from "formik";
 import { useState } from "react";
 import { TouchableOpacity } from "react-native";
-import GlobalHeader from "../components/GlobalHeader";
 
 export default function Form({ navigation }) {
   const [finalGrade, setFinalGrade] = useState("");
   const [gradeBand, setGradeBand] = useState("");
+  const [showFinalGrade, setShowFinalGrade] = useState(false);
+  const [showGradeBand, setShowGradeBand] = useState(false);
 
   const dismissKeyboard = () => {
     Keyboard.dismiss();
@@ -24,7 +25,6 @@ export default function Form({ navigation }) {
   return (
     <TouchableWithoutFeedback onPress={dismissKeyboard}>
       <View style={styles.container}>
-        <GlobalHeader />
         <Formik
           initialValues={{
             value1: " ",
@@ -54,6 +54,9 @@ export default function Form({ navigation }) {
             } else if (result > 90) {
               setGradeBand("Distinction 😎");
             }
+
+            setShowFinalGrade(true);
+            setShowGradeBand(true);
           }}
         >
           {(props) => (
@@ -111,8 +114,13 @@ export default function Form({ navigation }) {
               >
                 <Text style={styles.buttonText}>Calculate Final Grade</Text>
               </TouchableOpacity>
-              <Text style={styles.finalText}>Final Grade: {finalGrade}%</Text>
-              <Text style={styles.finalText}>{gradeBand}</Text>
+
+              {showFinalGrade && (
+                <Text style={styles.finalText}>Final Grade: {finalGrade}%</Text>
+              )}
+              {showGradeBand && (
+                <Text style={styles.finalText}>{gradeBand}</Text>
+              )}
             </View>
           )}
         </Formik>
