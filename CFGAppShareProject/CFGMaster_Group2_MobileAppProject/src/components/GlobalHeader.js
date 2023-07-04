@@ -9,7 +9,7 @@ export default function GlobalHeader({ navigation }) {
         <Text style={styles.title}>CFG</Text>
       </View>
       <View style={styles.loginContainer}>
-        <LoginButton navigation={navigation} />
+        {/* <LoginButton navigation={navigation} /> */}
       </View>
     </View>
   );
