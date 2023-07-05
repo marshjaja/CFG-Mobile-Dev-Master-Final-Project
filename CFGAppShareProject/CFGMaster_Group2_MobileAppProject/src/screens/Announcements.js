@@ -1,12 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, StyleSheet, FlatList, Animated } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  Animated,
+  Dimensions,
+  TouchableOpacity,
+} from "react-native";
 import * as FileSystem from "expo-file-system";
 import Papa from "papaparse";
 
 const AnnouncementCard = ({ title }) => {
+  const formattedTitle = title.replace(/\\n/g, "\n");
   return (
     <View style={styles.card}>
-      <Text style={styles.cardTitle}>{title}</Text>
+      <Text style={styles.cardTitle}>{formattedTitle}</Text>
     </View>
   );
 };
@@ -46,14 +55,29 @@ const AnnouncementScreen = () => {
   }, [announcements]);
 
   const renderItem = ({ item, index }) => {
-    const inputRange = [(index - 1) * 300, index * 300, (index + 1) * 300];
+    const { width: screenWidth } = Dimensions.get("window");
+    const inputRange = [
+      (index - 1) * screenWidth,
+      index * screenWidth,
+      (index + 1) * screenWidth,
+    ];
     const opacity = scrollX.interpolate({
       inputRange,
       outputRange: [0, 1, 0],
     });
 
+    const cardStyle = [
+      styles.cardContainer,
+      {
+        opacity,
+        width: screenWidth,
+        paddingLeft: screenWidth * 0.05,
+        paddingRight: screenWidth * 0.05,
+      },
+    ];
+
     return (
-      <Animated.View style={[styles.cardContainer, { opacity }]}>
+      <Animated.View style={cardStyle}>
         <AnnouncementCard title={item.title} />
       </Animated.View>
     );
@@ -79,26 +103,28 @@ const AnnouncementScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#000",
   },
   cardContainer: {
-    width: 300,
+    width: 400,
+    height: 500,
     alignItems: "center",
     justifyContent: "center",
-    paddingHorizontal: 20,
   },
   card: {
-    width: "100%",
-    height: 200,
-    backgroundColor: "#e0e0e0",
-    borderRadius: 8,
-    padding: 16,
+    width: "105%",
+    height: 800,
+    backgroundColor: "#ff69b4",
+    borderRadius: 20,
+    padding: 50,
+    color: "#fff",
     justifyContent: "center",
     alignItems: "center",
   },
   cardTitle: {
-    fontSize: 18,
     fontWeight: "bold",
+    textAlign: "center",
+    color: "#fff",
   },
 });
 
