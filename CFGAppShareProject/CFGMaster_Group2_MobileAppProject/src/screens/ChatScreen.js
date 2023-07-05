@@ -3,10 +3,10 @@ import {
   Text,
   View,
   TextInput,
+  StyleSheet,
   TouchableOpacity,
   ScrollView,
 } from "react-native";
-import styles from "../styles/AppStyles.js";
 import { firebaseApp } from "../../FirebaseConfig";
 import {
   getFirestore,
@@ -68,13 +68,12 @@ export default function ChatScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.header}>Code4Girls</Text>
       <ScrollView style={styles.chatContainer}>
         {messages.map(({ id, text, user }) => (
           <ChatMessage key={id} message={text} user={user} />
         ))}
       </ScrollView>
-      <View style={styles.inputContainer}>
+      <View>
         <TextInput
           style={styles.input}
           value={currentMessage}
@@ -88,3 +87,45 @@ export default function ChatScreen() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    marginBottom: 20,
+    marginHorizontal: 20,
+    flex: 1,
+  },
+  chatContainer: {
+    marginTop: 20,
+    marginVertical: 15,
+    marginHorizontal: 15,
+    height: 50,
+    borderWidth: 1,
+    borderRadius: 6,
+    borderColor: "#9336B4",
+    padding: 10,
+    backgroundColor: "#DFB5FE",
+  },
+  input: {
+    marginVertical: 4,
+    marginHorizontal: 15,
+    height: 50,
+    borderWidth: 1,
+    borderRadius: 6,
+    borderColor: "#9336B4",
+    padding: 10,
+    backgroundColor: "#fff",
+  },
+  button: {
+    backgroundColor: "#9336B4",
+    paddingVertical: 12,
+    marginHorizontal: 15,
+    borderRadius: 6,
+    marginVertical: 8,
+  },
+  buttonText: {
+    color: "#FFF",
+    fontSize: 16,
+    fontWeight: "bold",
+    textAlign: "center",
+  },
+});

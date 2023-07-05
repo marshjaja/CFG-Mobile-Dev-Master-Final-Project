@@ -36,8 +36,8 @@ const TabNavigator = () => {
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
-        tabBarActiveTintColor: "#ff69b4",
-        tabBarInactiveTintColor: "black",
+        tabBarActiveTintColor: "#9336B4",
+        tabBarInactiveTintColor: "#000",
       })}
     >
       <Tab.Screen
@@ -78,7 +78,7 @@ export default function App() {
     const timeoutId = setTimeout(hideSplashScreen, delay);
     return () => clearTimeout(timeoutId);
   }, []);
-  
+
   return (
     <NavigationContainer>
       <Stack.Navigator>

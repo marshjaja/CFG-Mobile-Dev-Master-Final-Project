@@ -1,35 +1,28 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  Modal,
-  Button,
-  StyleSheet,
-} from "react-native";
+import { View, Text, TouchableOpacity, Modal, StyleSheet } from "react-native";
 import { Calendar } from "react-native-big-calendar";
 
 const CalendarScreen = () => {
   const events = [
     {
-      title: "Teaching Full-stack",
-      start: new Date(2023, 5, 29, 18, 30),
-      end: new Date(2023, 5, 29, 20, 30),
+      title: "Full-stack class at 18:30",
+      start: new Date(2023, 6, 6, 18, 30),
+      end: new Date(2023, 6, 6, 20, 30),
     },
     {
       title: "Team Meeting",
-      start: new Date(2023, 5, 29, 11, 30),
-      end: new Date(2023, 5, 29, 12, 30),
+      start: new Date(2023, 6, 6, 11, 30),
+      end: new Date(2023, 2, 6, 12, 30),
     },
     {
       title: "Walk the dog",
-      start: new Date(2023, 5, 29, 7, 30),
-      end: new Date(2023, 5, 29, 8, 0),
+      start: new Date(2023, 6, 7, 7, 30),
+      end: new Date(2023, 6, 7, 8, 0),
     },
     {
       title: "Coffee break",
-      start: new Date(2023, 5, 30, 10, 0),
-      end: new Date(2023, 5, 30, 10, 30),
+      start: new Date(2023, 6, 7, 15, 0),
+      end: new Date(2023, 6, 7, 15, 30),
     },
   ];
 

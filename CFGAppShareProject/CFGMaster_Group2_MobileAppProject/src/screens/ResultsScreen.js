@@ -61,14 +61,7 @@ export default function Form({ navigation }) {
         >
           {(props) => (
             <View>
-              <View style={styles.image}>
-                <Image
-                  source={require("../../assets/code4cropped.png")}
-                  style={{ width: 200, height: 200, top: 10 }}
-                  resizeMode="contain"
-                />
-              </View>
-              <Text>First assessment grade (10%):</Text>
+              <Text style={styles.text}>First assessment grade (10%):</Text>
               <TextInput
                 style={styles.input}
                 placeholder="value1"
@@ -76,7 +69,7 @@ export default function Form({ navigation }) {
                 value={props.values.value1}
                 keyboardType="numeric"
               />
-              <Text>Second assessment grade (25%):</Text>
+              <Text style={styles.text}>Second assessment grade (25%):</Text>
               <TextInput
                 style={styles.input}
                 placeholder="value2"
@@ -84,7 +77,7 @@ export default function Form({ navigation }) {
                 value={props.values.value2}
                 keyboardType="numeric"
               />
-              <Text>Homework average (15%):</Text>
+              <Text style={styles.text}>Homework average (15%):</Text>
               <TextInput
                 style={styles.input}
                 placeholder="value3"
@@ -92,7 +85,7 @@ export default function Form({ navigation }) {
                 value={props.values.value3}
                 keyboardType="numeric"
               />
-              <Text>Group project result (25%):</Text>
+              <Text style={styles.text}>Group project result (25%):</Text>
               <TextInput
                 style={styles.input}
                 placeholder="value4"
@@ -100,7 +93,7 @@ export default function Form({ navigation }) {
                 value={props.values.value4}
                 keyboardType="numeric"
               />
-              <Text>Specialisation exam result (25%):</Text>
+              <Text style={styles.text}>Specialisation exam result (25%):</Text>
               <TextInput
                 style={styles.input}
                 placeholder="value5"
@@ -136,8 +129,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  text: {
+    fontWeight: "bold",
+  },
   input: {
-    marginVertical: 4,
+    marginVertical: 15,
     height: 50,
     borderWidth: 1,
     borderRadius: 6,

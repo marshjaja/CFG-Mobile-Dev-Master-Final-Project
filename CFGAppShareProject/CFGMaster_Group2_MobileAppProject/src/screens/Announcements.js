@@ -103,18 +103,17 @@ const AnnouncementScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#000",
+    backgroundColor: "#fff",
   },
   cardContainer: {
-    width: 400,
-    height: 500,
+    paddingTop: 20,
     alignItems: "center",
     justifyContent: "center",
   },
   card: {
+    paddingTop: 20,
     width: "105%",
-    height: 800,
-    backgroundColor: "#ff69b4",
+    backgroundColor: "#9336B4",
     borderRadius: 20,
     padding: 50,
     color: "#fff",
