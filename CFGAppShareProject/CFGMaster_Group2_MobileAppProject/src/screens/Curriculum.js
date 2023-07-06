@@ -2,7 +2,7 @@ import React, { useState, useCallback, useRef } from "react";
 import {
   StyleSheet,
   Text,
-  Button,
+  Linking,
   View,
   TouchableOpacity,
   ScrollView,
@@ -20,7 +20,9 @@ export default function Curriculum({ navigation }) {
         </View>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => Alert.alert("Simple Button pressed")}
+          onPress={() =>
+            Linking.openURL("https://reactnative.dev/docs/tutorial")
+          }
         >
           <Text style={styles.buttonText}>Link</Text>
         </TouchableOpacity>
@@ -32,7 +34,7 @@ export default function Curriculum({ navigation }) {
         </View>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => Alert.alert("Button with adjusted color pressed")}
+          onPress={() => Linking.openURL("https://expo.dev/client")}
         >
           <Text style={styles.buttonText}>Link</Text>
         </TouchableOpacity>
@@ -44,7 +46,7 @@ export default function Curriculum({ navigation }) {
         </View>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => Alert.alert("Button with adjusted color pressed")}
+          onPress={() => Linking.openURL("https://reactnative.dev/docs/view")}
         >
           <Text style={styles.buttonText}>Link</Text>
         </TouchableOpacity>
@@ -56,7 +58,9 @@ export default function Curriculum({ navigation }) {
         </View>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => Alert.alert("Button with adjusted color pressed")}
+          onPress={() =>
+            Linking.openURL("https://www.w3schools.com/react/react_state.asp")
+          }
         >
           <Text style={styles.buttonText}>Link</Text>
         </TouchableOpacity>
@@ -68,7 +72,9 @@ export default function Curriculum({ navigation }) {
         </View>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => Alert.alert("Button with adjusted color pressed")}
+          onPress={() =>
+            Linking.openURL("https://reactnative.dev/docs/textinput")
+          }
         >
           <Text style={styles.buttonText}>Link</Text>
         </TouchableOpacity>
@@ -80,7 +86,9 @@ export default function Curriculum({ navigation }) {
         </View>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => Alert.alert("Button with adjusted color pressed")}
+          onPress={() =>
+            Linking.openURL("https://reactnative.dev/docs/scrollview")
+          }
         >
           <Text style={styles.buttonText}>Link</Text>
         </TouchableOpacity>
@@ -92,7 +100,11 @@ export default function Curriculum({ navigation }) {
         </View>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => Alert.alert("Button with adjusted color pressed")}
+          onPress={() =>
+            Linking.openURL(
+              "https://blog.expo.dev/react-native-flatlist-made-easy-20fca51e0327"
+            )
+          }
         >
           <Text style={styles.buttonText}>Link</Text>
         </TouchableOpacity>
@@ -105,7 +117,9 @@ export default function Curriculum({ navigation }) {
         </View>
         <TouchableOpacity
           style={styles.button}
-          onPress={() => Alert.alert("Button with adjusted color pressed")}
+          onPress={() =>
+            Linking.openURL("https://reactnative.dev/docs/handling-touches")
+          }
         >
           <Text style={styles.buttonText}>Link</Text>
         </TouchableOpacity>
